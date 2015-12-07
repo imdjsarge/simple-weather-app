@@ -34,14 +34,20 @@ $(document).ready(function () {
 
                     if (data.cod === 200) {
                         weatherApp.$targetArea.html("Success!");
-$("<p>").insertAfter("#weather");
-               var weatherDesc = data.weather[0].description;
-       $(weatherDesc).insertAfter("#weather");                 
-                        
-    //$(weatherDesc).attr("<p>");
-                        
 
+                        Desc = $("<p>").insertAfter("#weather");
+
+                        weatherDesc = data.weather[0].description;
+                        weatherApp.$targetArea.html(weatherDesc).insertAfter("p");
+                        
                         console.log(weatherDesc);
+
+                        weatherTemp = data.main[0].temp + "&units=imperial";
+
+
+
+                        console.log(weatherTemp);
+
                     } else {
                         weatherApp.$targetArea.html("Sorry, no weather data is available.  Try again later.");
                     }

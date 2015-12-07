@@ -34,10 +34,12 @@ $(document).ready(function () {
 
                     if (data.cod === 200) {
                         weatherApp.$targetArea.html("Success!");
-
-                        weatherDesc = data.weather[0].description;
+$("<p>").insertAfter("#weather");
+               var weatherDesc = data.weather[0].description;
+       $(weatherDesc).insertAfter("#weather");                 
                         
-                      
+    //$(weatherDesc).attr("<p>");
+                        
 
                         console.log(weatherDesc);
                     } else {

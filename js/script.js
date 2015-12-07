@@ -1,9 +1,5 @@
 $(document).ready(function () {
 
-    console.log("hello");
-
-
-
     weatherApp = {
 
             $targetArea: $("#weather"),
@@ -33,16 +29,16 @@ $(document).ready(function () {
                 $.getJSON(url, function (data) {
 
                     if (data.cod === 200) {
-                        weatherApp.$targetArea.html("Success!");
+
 
                         Desc = $("<p>").insertAfter("#weather");
 
                         weatherDesc = data.weather[0].description;
                         weatherTemp = data.main.temp;
-                        
-                        
-                        weatherApp.$targetArea.html("The current weather is: " + weatherDesc + ".  The current temperature is: " + weatherTemp + " F.").insertAfter("p");
-                        
+
+                        display = weatherApp.$targetArea.html("The current weather is: " + weatherDesc + ".  The current temperature is: " + weatherTemp + " F.");
+                        $(Desc).append(display);
+
                         console.log(weatherDesc);
                         console.log(weatherTemp);
 

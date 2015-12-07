@@ -32,6 +32,10 @@ input {
 #weather {
     width: 80%;
     margin: auto;
+    color: blue;
+    font-style: italic;
+    font-size: 25px;
+    text-align: center;
 }  
 
 .hide {

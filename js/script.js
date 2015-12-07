@@ -38,14 +38,12 @@ $(document).ready(function () {
                         Desc = $("<p>").insertAfter("#weather");
 
                         weatherDesc = data.weather[0].description;
-                        weatherApp.$targetArea.html(weatherDesc).insertAfter("p");
+                        weatherTemp = data.main.temp;
+                        
+                        
+                        weatherApp.$targetArea.html("The current weather is: " + weatherDesc + ".  The current temperature is: " + weatherTemp + " F.").insertAfter("p");
                         
                         console.log(weatherDesc);
-
-                        weatherTemp = data.main[0].temp + "&units=imperial";
-
-
-
                         console.log(weatherTemp);
 
                     } else {
